@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FaStar } from 'react-icons/fa';
 import { useStore, actions } from '~/store';
+import { useNavigate } from 'react-router-dom';
 
 const Champion = ({ item }) => {
     const [state, dispatch] = useStore();
+    const navigate = useNavigate();
     return (
         <Wrapper>
             <motion.div className="champion">
@@ -13,7 +15,15 @@ const Champion = ({ item }) => {
                     alt={item.name}
                     src={item.loadURL}
                     effect="blur"
-                    visibleByDefault={item.loadURL === `/${item.name}_0.jpg`}
+                    visibleByDefault={
+                        item.loadURL ===
+                        `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${item.name}_0.jpg`
+                    }
+                    onClick={() => {
+                        navigate('/champion');
+                        dispatch(actions.setChampionPage(item.name));
+                        localStorage.setItem('currentChamp', `${item.name}`);
+                    }}
                 />
                 <div
                     className={state.favorite.includes(item.data.name) ? 'favor active' : 'favor'}
@@ -46,11 +56,11 @@ const Wrapper = styled.div`
             width: 100%;
             text-align: center;
             padding: 10px 0;
-            z-index: 3;
             background-color: rgba(3, 3, 3, 0.6);
 
             &:hover {
-                color: var(--second);
+                color: var(--highlight);
+                background-color: rgba(100, 100, 100, 0.6);
             }
 
             &.active {

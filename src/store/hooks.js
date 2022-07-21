@@ -1,9 +1,19 @@
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Context from './Context';
 
-const useStore = () => {
+export const useStore = () => {
     const [state, dispatch] = useContext(Context);
     return [state, dispatch];
 };
 
-export { useStore };
+export const useViewport = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+
+    return { width };
+};

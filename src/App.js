@@ -1,5 +1,5 @@
-import { useStore } from '~/store';
-import { Header, Container, Footer } from '~/layout';
+import { useStore } from './store';
+import { Header, Container, Footer } from './layout';
 function App() {
     const [state] = useStore();
     const { thermeColor } = state;

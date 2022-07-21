@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 import { Wave } from '~/Components';
 import images from '~/assets/images';
 import { Home, LolMemo } from '~/pages';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useViewport } from '~/store';
 
 const Header = () => {
     const [checked, setChecked] = useState(true);
+    const viewPort = useViewport();
+    const isTablet = viewPort.width <= 900;
+    useEffect(() => {
+        if (isTablet) {
+            setChecked(false);
+        }
+    }, [isTablet]);
     return (
         <Wrapper>
             <div className="wiki">

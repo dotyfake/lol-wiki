@@ -11,7 +11,7 @@ const Home = () => {
     const [allChampions, setAllChampions] = useState([]);
     const [champions, setChampions] = useState([]);
     const [inputSearch, setInputSearch] = useState('');
-    console.log(allChampions.filter((item) => item.name.toUpperCase().includes(''.toUpperCase())));
+    // console.log(allChampions.filter((item) => item.name.toUpperCase().includes(''.toUpperCase())));
 
     useEffect(() => {
         axios.get('http://ddragon.leagueoflegends.com/cdn/12.12.1/data/vn_VN/champion.json').then((res) => {

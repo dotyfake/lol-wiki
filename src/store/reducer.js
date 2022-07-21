@@ -1,6 +1,10 @@
-import { SET_THERME_COLOR, SET_FAVORITE_CHAMP } from '~/store';
+import { SET_THERME_COLOR, SET_FAVORITE_CHAMP, SET_CHAMPION_PAGE } from '~/store';
 
-const initialState = { thermeColor: 'Aqua', favorite: JSON.parse(localStorage.favorite ?? `[]`) ?? `[]` };
+const initialState = {
+    thermeColor: 'Aqua',
+    favorite: JSON.parse(localStorage.favorite ?? `[]`) ?? `[]`,
+    championPage: 'Ashe',
+};
 const reducer = (state, action) => {
     switch (action.type) {
         case SET_THERME_COLOR:
@@ -8,6 +12,13 @@ const reducer = (state, action) => {
                 ...state,
                 thermeColor: action.color,
             };
+
+        case SET_CHAMPION_PAGE:
+            return {
+                ...state,
+                championPage: action.champion,
+            };
+
         case SET_FAVORITE_CHAMP:
             let currentFavors;
             if (state.favorite.includes(action.champions)) {
