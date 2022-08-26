@@ -1,11 +1,12 @@
 ## Thông tin dự án
-... Dự án là một webapp giúp tra cứu thông tin tướng trong tựa game liên minh huyển thoại, bao gồm thông tướng, kỹ năng, trang phục, tip & trick.
-... Các chức năng chính của dự án:
+Dự án là một webapp giúp tra cứu thông tin tướng trong tựa game liên minh huyển thoại, bao gồm thông tướng, kỹ năng, trang phục, tip & trick.
+Các chức năng chính của dự án:
 - Tra cứu trực tiếp tại trang chủ.
 - Tra cứu qua chức năng tìm kiếm.
 - Thêm những tướng yêu thích.
 - Cùng nhiều tính năng **đang phát triển**.
-... **Dự án vẫn dang cập nhật**
+
+**Dự án vẫn dang cập nhật**
 -----
 ## Công nghệ sử dụng trong dự án
 ### Frontend
