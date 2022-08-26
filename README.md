@@ -5,7 +5,6 @@ Các chức năng chính của dự án:
 - Tra cứu qua chức năng tìm kiếm.
 - Thêm những tướng yêu thích.
 - Cùng nhiều tính năng **đang phát triển**.
-
 **Dự án vẫn dang cập nhật**
 -----
 ## Công nghệ sử dụng trong dự án
