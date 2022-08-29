@@ -7,6 +7,7 @@ Các chức năng chính của dự án:
 - Cùng nhiều tính năng **đang phát triển**.
 **Dự án vẫn dang cập nhật**
 -----
+## Link demo: https://lol-doty.netlify.app/
 ## Công nghệ sử dụng trong dự án
 ### Frontend
 - Dự án được tạo từ CRA(create-react-app).
